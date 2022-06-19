@@ -6,6 +6,7 @@ body {
   right: 0;
   top: 0;
   font-family: Poppins;
+  scroll-behavior: smooth !important;
 }
 @font-face {
   font-family: Poppins;
@@ -180,6 +181,23 @@ body {
   align-items: center;
   top: 0;
   left: 0;
+  position: relative;
+}
+.header-menu-content label {
+  display: inline-block;
+  text-indent: -1000000px;
+  background-image: url("./assests/icon/menu.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  display: none;
+  background-size: cover;
+  cursor: pointer;
+}
+.header-menu-content input[type="checkbox"] {
+  display: none;
 }
 .header-menu-list-content li {
   display: flex;
@@ -213,7 +231,7 @@ body {
 }
 .content-activities-list {
   height: 300px;
-  width: 1250px;
+  max-width: 1250px;
   display: flex;
   margin-left: auto;
   margin-right: auto;
@@ -682,7 +700,7 @@ body {
 }
 #casses-head {
   margin: 10px auto;
-  width: 1700px;
+  max-width: 1600px;
   height: 727px;
   justify-content: center;
   display: flex;
@@ -693,7 +711,7 @@ body {
   background-size: auto;
 }
 #casses-head > * {
-  width: 500px;
+  width: 400px;
 }
 #subscribe-head {
   display: flex;
@@ -860,6 +878,7 @@ body {
   background-repeat: no-repeat;
   /* background-position: center; */
   background-size: auto;
+  position: relative;
 }
 .blog-date {
   position: absolute;
@@ -948,8 +967,9 @@ body {
 }
 #statistical-description-left h2 {
   font-size: 38px;
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 50px;
+  text-align: left;
 }
 #statistical-description-left > span {
   font-size: 15px;
@@ -959,7 +979,7 @@ body {
 #statistical-description-right {
   color: white;
   width: 30%;
-  text-align: justify;
+  text-align: left;
   padding-top: 98px;
 }
 #statistical-description-right > p {
@@ -1131,12 +1151,15 @@ body {
 #footer-image {
   position: absolute;
   height: 918px;
-  width: 100%;
+  width: 1717px;
   background-image: url("./assests/light-bulb-idea.png");
   background-repeat: no-repeat;
   background-position: center -190px;
   background-size: auto;
   z-index: -10;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 #footer-image-cover {
   position: absolute;
@@ -1292,4 +1315,417 @@ body {
 }
 #copyright span {
   color: #29d197;
+}
+@media screen and (max-width: 1240px) {
+  .header-menu-list-content {
+    display: none;
+  }
+  .header-menu-content label {
+    display: block;
+  }
+  .header-menu-content input[type="checkbox"]:checked + ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: -80px;
+  }
+  .header-menu-list-content li {
+    display: block;
+    height: 40px;
+    width: 100px;
+    font-size: 10px;
+    text-align: center;
+    line-height: 40px;
+    border-bottom: 1px solid white;
+    padding: 0px;
+  }
+  .header-content {
+    display: flex;
+  }
+  .header-content-text {
+    padding: 0px;
+    width: 50%;
+  }
+  .header-content-text {
+    padding: 0px;
+    padding-left: 100px;
+  }
+  .header-content-text p {
+    font-size: 30px;
+    text-align: left;
+  }
+  .btn-header-content {
+    padding: 0px;
+    width: 50%;
+  }
+  .btn-header-content button {
+    display: block;
+    margin: 10px auto;
+  }
+  .content-forum-container {
+    padding: 0 20px;
+  }
+  .content-forum-left {
+    transform: translateY(-80%);
+  }
+  .content-forum-left-sub {
+    font-size: 20px;
+  }
+  .content-forum-left-title {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 1120px) {
+  #casses {
+    height: 1160px;
+  }
+  #casses-head {
+    display: block;
+  }
+  #casses-head > div {
+    margin: 0 auto;
+  }
+  #casses-footer {
+    left: 45%;
+  }
+  #subscribe {
+    text-align: center;
+  }
+  #subscribe-icon {
+    position: absolute;
+    left: 110px;
+    width: 85px;
+    height: 85px;
+  }
+  #subscribe-description h3 {
+    font-size: 20px;
+  }
+  #testimonials {
+    padding-left: 0px;
+  }
+  #testimonials-image {
+    left: -170px;
+  }
+  #testimonials-content {
+    text-align: center;
+    padding-right: 0px;
+  }
+  #testimonials-content h3 {
+    font-size: 20px;
+  }
+  #statistical-description-left {
+    width: 49%;
+  }
+  #statistical-description-right {
+    width: 40%;
+  }
+  #copyright {
+    text-align: center;
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 860px) {
+  .content-studies {
+    height: 1220px;
+  }
+  .content-studies-list {
+    display: block;
+  }
+  .content-forum-container {
+    display: block;
+  }
+  .content-forum-left {
+    text-align: center;
+    transform: translateY(15%);
+    margin-bottom: 50px;
+  }
+  .content-forum-left p {
+    font-size: 20px;
+  }
+  .content-forum-right {
+    margin: 0 auto;
+  }
+  .content-courses-menu {
+    display: block;
+  }
+  .content-courses-menu-list li {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .content-courses-list {
+    display: block;
+  }
+  .courses-item {
+    max-width: 700px;
+  }
+  .content-courses-column {
+    margin-left: 0px;
+  }
+  .content-courses-top,
+  .content-courses-bottom {
+    width: 700px;
+  }
+  .content-courses-top > .courses-item-header,
+  .content-courses-bottom > .courses-item-header {
+    width: 700px;
+  }
+  .courses-item-envaluate {
+    margin-left: 193px;
+  }
+  .courses-item-container {
+    text-align: center;
+    margin-left: 0px;
+  }
+  #subscribe-icon {
+    left: 30px;
+  }
+  #some-blog {
+    display: block;
+    width: 100%;
+  }
+  .blog {
+    margin: 50px auto;
+    width: 70%;
+  }
+  .blog-image {
+    margin: 0 auto;
+  }
+  .blog-content {
+    text-align: center;
+  }
+  #some-courses {
+    display: block;
+    width: 100%;
+  }
+  .course {
+    margin: 50px auto;
+    width: 80%;
+  }
+  .course-image {
+    margin: 0 auto;
+    position: relative;
+  }
+  .course-content {
+    margin-top: 50px;
+    text-align: center;
+  }
+  .course-rate {
+    background-position: center;
+  }
+}
+@media screen and (max-width: 700px) {
+  .header {
+    background-size: cover;
+    background-position: -400px -4px;
+  }
+  .header-top {
+    display: block;
+  }
+  .header-top-left-list li {
+    display: block;
+  }
+  .header-content {
+    display: block;
+    margin-top: 40px;
+  }
+  .header-content-text {
+    padding-left: 0px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .header-content-text p {
+    text-align: center;
+  }
+  .btn-header-content {
+    width: 100%;
+    margin-top: 50px;
+  }
+  .btn-full,
+  .btn-line {
+    height: 62px;
+    width: 160px;
+    font-size: 12px;
+  }
+  .btn-header-menu-login {
+    height: 48px;
+    width: 90px;
+    font-size: 9px;
+  }
+  .content-activities {
+    transform: translateY(0px);
+  }
+  .content-activities-list-item > span {
+    font-size: 10px;
+  }
+  .content-studies-item-text span:nth-child(1) {
+    font-size: 17px;
+  }
+  .content-studies-item-text span:nth-child(2) {
+    font-size: 10px;
+  }
+  .content-forum {
+    margin-top: 30px;
+    background-size: auto;
+  }
+  .content-forum-container {
+    padding: 0px;
+  }
+  .content-forum-right-form {
+    margin: 0 auto;
+    width: 454px;
+  }
+  .content-courses-header {
+    margin-top: 30px;
+  }
+  .content-courses-header-title {
+    font-size: 30px;
+  }
+  .content-courses-header-sub {
+    font-size: 15px;
+  }
+  .content-courses-list {
+    width: 100%;
+  }
+  .content-courses-column {
+    width: 100%;
+  }
+  .content-courses-top,
+  .content-courses-bottom {
+    height: 529px;
+    width: 370px;
+    margin: 20px auto;
+  }
+  .content-courses-top > .courses-item-header,
+  .content-courses-bottom > .courses-item-header {
+    height: 270px;
+    width: 370px;
+  }
+  .courses-item-envaluate {
+    margin-left: 25px;
+  }
+  .courses-item-header img {
+    height: 100%;
+    width: 100%;
+  }
+  .courses-item-detail button {
+    transform: translateY(44px);
+  }
+  .courses-item-detail button:hover {
+    transform: translateY(40px);
+  }
+  #casses-footer {
+    width: 100%;
+  }
+  #casses-footer-cover {
+    width: 100%;
+    height: 264px;
+    /* left: 0px; */
+    top: 142px;
+    left: 55%;
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  #casses-footer-icon,
+  #casses-footer-content {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    font-size: 20px;
+  }
+  #subscribe-description,
+  #testimonials-content {
+    width: 50%;
+    margin: 0 auto;
+  }
+  #testimonials-image {
+    left: -55px;
+  }
+  #statistical-description {
+    display: block;
+  }
+  #statistical-description-left {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+  }
+  #statistical-description-left h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    text-align: center;
+  }
+  #statistical-description-left span {
+    font-size: 15px;
+  }
+  #statistical-description-right {
+    width: 100%;
+    margin-top: 70px;
+    padding-top: 0px;
+    padding-left: 19%;
+  }
+  #statistical-description-right > p {
+    margin-bottom: 10px;
+  }
+  #statistical-description-right span {
+    font-size: 15px;
+  }
+  .statistical-data-column h3 {
+    font-size: 30px;
+  }
+  .statistical-data-column p {
+    font-size: 10px;
+  }
+  #footer-image {
+    width: 100%;
+    height: 1569px;
+    background-position: -10px -288px;
+    background-size: cover;
+  }
+  #footer-image-cover {
+    height: 100%;
+  }
+  #footer-description-detail {
+    display: block;
+    width: 100%;
+  }
+  #footer-description {
+    height: 1070px;
+  }
+  #footer-infomation,
+  #footer-subscribe,
+  #footer-get-touch {
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    height: 376px;
+    padding-top: 0px;
+  }
+  /* .social-contact {
+    position: absolute;
+  } */
+  .footer-get-touch-description {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    text-align: left;
+  }
+  .social-contact {
+    display: block;
+    position: absolute;
+  }
+  #footer-list-image {
+    top: -40px;
+    width: 100%;
+  }
+  .footer-image {
+    width: 70px;
+    height: 70px;
+  }
+  #copyright {
+    width: 100%;
+  }
 }
