@@ -61,6 +61,7 @@ body {
   font-size: 15px;
 }
 .header {
+  position: relative;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -70,8 +71,9 @@ body {
   background-blend-mode: multiply;
   background-color: white;
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: cover;
   background-attachment: scroll;
+  margin-bottom: 300px;
 }
 .header-content {
   padding-top: 5%;
@@ -225,9 +227,10 @@ body {
 }
 .content-activities {
   width: 100%;
+  top: 100%;
   height: auto;
   transform: translateY(-120px);
-  /* position: absolute; */
+  position: absolute;
 }
 .content-activities-list {
   height: 300px;
@@ -700,7 +703,7 @@ body {
 }
 #casses-head {
   margin: 10px auto;
-  max-width: 1600px;
+  max-width: 100%;
   height: 727px;
   justify-content: center;
   display: flex;
@@ -948,7 +951,7 @@ body {
   width: 100%;
   background-image: url("./assests/Layer\ 7.png");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: left;
   background-size: auto;
   z-index: -10;
 }
@@ -1150,11 +1153,11 @@ body {
 }
 #footer-image {
   position: absolute;
-  height: 918px;
-  width: 1717px;
+  height: 100%;
+  width: 100%;
   background-image: url("./assests/light-bulb-idea.png");
   background-repeat: no-repeat;
-  background-position: center -190px;
+  background-position: left -190px;
   background-size: auto;
   z-index: -10;
   left: 50%;
@@ -1377,6 +1380,37 @@ body {
   }
 }
 @media screen and (max-width: 1120px) {
+  .content-activities-list-item {
+    position: relative;
+  }
+  .content-activities-list-item::after {
+    width: 100%;
+  }
+
+  .content-courses-list {
+    display: block;
+  }
+  .courses-item {
+    max-width: 700px;
+  }
+  .content-courses-column {
+    margin-left: 0px;
+  }
+  .content-courses-top,
+  .content-courses-bottom {
+    width: 700px;
+  }
+  .content-courses-top > .courses-item-header,
+  .content-courses-bottom > .courses-item-header {
+    width: 700px;
+  }
+  .courses-item-envaluate {
+    margin-left: 193px;
+  }
+  .courses-item-container {
+    text-align: center;
+    margin-left: 0px;
+  }
   #casses {
     height: 1160px;
   }
@@ -1432,6 +1466,9 @@ body {
   .content-studies-list {
     display: block;
   }
+  .content-forum {
+    margin-top: 100px;
+  }
   .content-forum-container {
     display: block;
   }
@@ -1444,7 +1481,15 @@ body {
     font-size: 20px;
   }
   .content-forum-right {
+    width: 100%;
     margin: 0 auto;
+  }
+  .content-forum-right-form {
+    width: 70%;
+  }
+  .content-forum-right-form input {
+    margin: 0 auto;
+    width: 70%;
   }
   .content-courses-menu {
     display: block;
@@ -1452,30 +1497,6 @@ body {
   .content-courses-menu-list li {
     display: inline-block;
     margin-bottom: 10px;
-  }
-  .content-courses-list {
-    display: block;
-  }
-  .courses-item {
-    max-width: 700px;
-  }
-  .content-courses-column {
-    margin-left: 0px;
-  }
-  .content-courses-top,
-  .content-courses-bottom {
-    width: 700px;
-  }
-  .content-courses-top > .courses-item-header,
-  .content-courses-bottom > .courses-item-header {
-    width: 700px;
-  }
-  .courses-item-envaluate {
-    margin-left: 193px;
-  }
-  .courses-item-container {
-    text-align: center;
-    margin-left: 0px;
   }
   #subscribe-icon {
     left: 30px;
@@ -1552,9 +1573,6 @@ body {
     width: 90px;
     font-size: 9px;
   }
-  .content-activities {
-    transform: translateY(0px);
-  }
   .content-activities-list-item > span {
     font-size: 10px;
   }
@@ -1565,7 +1583,6 @@ body {
     font-size: 10px;
   }
   .content-forum {
-    margin-top: 30px;
     background-size: auto;
   }
   .content-forum-container {
@@ -1573,7 +1590,7 @@ body {
   }
   .content-forum-right-form {
     margin: 0 auto;
-    width: 454px;
+    width: 70%;
   }
   .content-courses-header {
     margin-top: 30px;
@@ -1582,7 +1599,7 @@ body {
     font-size: 30px;
   }
   .content-courses-header-sub {
-    font-size: 15px;
+    font-size: 10px;
   }
   .content-courses-list {
     width: 100%;
@@ -1713,7 +1730,7 @@ body {
     margin-top: 0px;
     text-align: left;
   }
-  .social-contact {
+  #footer-get-touch .social-contact {
     display: block;
     position: absolute;
   }
